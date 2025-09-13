@@ -7,6 +7,7 @@ import {
     BookOpen,
     Github,
     Code2,
+    GitCompare,
 } from 'lucide-react'
 
 const features = [
@@ -21,6 +22,15 @@ const features = [
     },
     {
         id: 2,
+        title: 'Data Comparison',
+        description: 'Compare multiple data sources for discrepancies',
+        icon: GitCompare,
+        color: 'from-purple-400 to-purple-600',
+        link: '/data-comparison',
+        external: false
+    },
+    {
+        id: 3,
         title: 'Personal Blog',
         description: 'Thoughts, insights, and stories',
         icon: BookOpen,
@@ -29,7 +39,7 @@ const features = [
         external: false
     },
     {
-        id: 3,
+        id: 4,
         title: 'GitHub Profile',
         description: 'Explore my open source projects',
         icon: Github,
@@ -38,7 +48,7 @@ const features = [
         external: true
     },
     {
-        id: 6,
+        id: 5,
         title: 'Code Projects',
         description: 'Interactive coding experiments',
         icon: Code2,
@@ -60,7 +70,7 @@ const FeatureGrid = () => {
     }
 
     return (
-        <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {features.map((feature, index) => {
                 const IconComponent = feature.icon
 
