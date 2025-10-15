@@ -1,0 +1,162 @@
+═══════════════════════════════════════════════════════════════════
+  GRAPHQL FILE COMPARISON SCRIPT - QUICK START GUIDE
+═══════════════════════════════════════════════════════════════════
+
+📦 PORTABLE SETUP - Everything in One Place!
+
+This script compares a GraphQL file (as the source of truth) against
+two other files and shows you the differences.
+
+───────────────────────────────────────────────────────────────────
+1️⃣  SETUP YOUR FILES
+───────────────────────────────────────────────────────────────────
+
+Place all your data files in THIS SAME FOLDER as the script:
+
+    ✓ graphql.json      ← Your GraphQL file (File 1 - Source of Truth)
+    ✓ onecx.json        ← Your second file (File 2)
+    ✓ mapping.xlsx      ← Your third file (File 3)
+
+Supported file types:
+    • JSON (GraphQL structure or OneCX array format)
+    • Excel (.xlsx, .xls, .csv)
+
+───────────────────────────────────────────────────────────────────
+2️⃣  INSTALL REQUIRED MODULE (ONE-TIME SETUP)
+───────────────────────────────────────────────────────────────────
+
+If you need to compare Excel files, install the ImportExcel module:
+
+    Open PowerShell and run:
+    
+    Install-Module -Name ImportExcel -Scope CurrentUser -Force
+
+    ⚠️ Note: You only need this for Excel files. JSON files work 
+    without any additional modules!
+
+───────────────────────────────────────────────────────────────────
+3️⃣  RUN THE SCRIPT
+───────────────────────────────────────────────────────────────────
+
+Open PowerShell in THIS folder and run:
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx"
+
+    💡 TIP: Use TAB to auto-complete filenames!
+
+───────────────────────────────────────────────────────────────────
+4️⃣  VIEW RESULTS
+───────────────────────────────────────────────────────────────────
+
+The script will:
+    ✓ Show colorized results in the console
+    ✓ Display summary statistics
+    ✓ List all discrepancies with severity levels
+
+───────────────────────────────────────────────────────────────────
+📊 GENERATE REPORTS (OPTIONAL)
+───────────────────────────────────────────────────────────────────
+
+🌐 HTML REPORT (Beautiful, interactive):
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx" -OutputFormat HTML
+
+    Report saved as: GraphQL_Comparison_YYYYMMDD_HHMMSS.html
+    Open in your browser to view!
+
+
+📄 CSV REPORT (For Excel):
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx" -OutputFormat CSV
+
+    Report saved as: GraphQL_Comparison_YYYYMMDD_HHMMSS.csv
+    Open in Excel for analysis!
+
+
+📋 ALL FORMATS (Console + CSV + JSON + HTML):
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx" -OutputFormat All
+
+───────────────────────────────────────────────────────────────────
+🔍 FILTER BY SEVERITY
+───────────────────────────────────────────────────────────────────
+
+Show only critical issues:
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx" -SeverityFilter Critical
+
+Show only warnings:
+
+    .\Compare-GraphQLFiles.ps1 -GraphQLFile "graphql.json" -File2 "onecx.json" -File3 "mapping.xlsx" -SeverityFilter Warning
+
+───────────────────────────────────────────────────────────────────
+🆘 TROUBLESHOOTING
+───────────────────────────────────────────────────────────────────
+
+❌ "File not found" error?
+   → Make sure your data files are in the SAME folder as the script
+   → Check the file names match exactly (case-sensitive)
+   → Run Get-ChildItem to list files in the folder
+
+❌ "ImportExcel module not found"?
+   → You're trying to compare Excel files
+   → Install the module: Install-Module -Name ImportExcel -Scope CurrentUser
+
+❌ "Script execution disabled"?
+   → PowerShell security is blocking the script
+   → Run: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+❌ Can't find the report files?
+   → Reports are saved in the SAME folder as the script
+   → Look for files starting with "GraphQL_Comparison_"
+
+───────────────────────────────────────────────────────────────────
+📚 MORE HELP
+───────────────────────────────────────────────────────────────────
+
+• View built-in help:     Get-Help .\Compare-GraphQLFiles.ps1 -Full
+• Quick examples:         See QUICK_START.md
+• Full documentation:     See README.md
+• Portability guide:      See PORTABILITY_GUIDE.md
+
+───────────────────────────────────────────────────────────────────
+📦 SHARING WITH TEAM MEMBERS
+───────────────────────────────────────────────────────────────────
+
+This folder is PORTABLE! You can:
+
+1. Zip this entire folder and email it
+2. Copy to a USB drive or network share
+3. Commit to Git repository
+
+Recipients just need to:
+1. Extract/copy the folder
+2. Add their data files
+3. Run the script!
+
+No installation or configuration needed (except ImportExcel module
+for Excel files).
+
+───────────────────────────────────────────────────────────────────
+✅ QUICK CHECKLIST
+───────────────────────────────────────────────────────────────────
+
+Before running:
+  ☐ All data files in same folder as script
+  ☐ ImportExcel module installed (if using Excel files)
+  ☐ PowerShell execution policy allows scripts
+  ☐ File names in command match actual files
+
+After running:
+  ☐ Review console output for summary
+  ☐ Check report files in same folder
+  ☐ Open HTML report in browser (if generated)
+  ☐ Analyze discrepancies and take action
+
+───────────────────────────────────────────────────────────────────
+
+🚀 Ready to compare? Let's go!
+
+Happy Comparing! 🎉
+
+═══════════════════════════════════════════════════════════════════
